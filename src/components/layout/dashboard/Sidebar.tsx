@@ -2,6 +2,8 @@ import { component$ } from "@builder.io/qwik";
 import { dataGeneralSidebar } from "~/data/SidebarRoutes";
 import { SidebarItem } from "./SidebarItem";
 import { LogoCustom } from "~/components/common/LogoCustom";
+import { Link } from "@builder.io/qwik-city";
+import { SidebarItemList } from "./SidebarItemList";
 
 export default component$(() => {
   return (
@@ -38,19 +40,28 @@ export default component$(() => {
           <LogoCustom
             title="Caprebicentenario"
             isClickable={true}
-            classCustom="mb-5 flex items-center border-b ps-2.5 "
+            classCustom="mb-5 flex items-center ps-2.5 "
             srcImg="https://flowbite.com/docs/images/logo.svg"
           />
 
           <ul class="space-y-2">
             {dataGeneralSidebar.map((item) => (
               <li key={item.label}>
-                <SidebarItem
-                  key={item.label}
-                  icon={<item.icon />}
-                  label={item.label}
-                  href={item.href}
-                />
+                   {item.options ? (
+                      <SidebarItemList
+                        key={item.label}
+                        label={item.label} 
+                        icon={<item.icon />} 
+                        options={item.optionsList}
+                      />
+                    ) : (
+                      <SidebarItem
+                        key={item.label}
+                        icon={<item.icon />}
+                        label={item.label}
+                        href={item.href}
+                      />
+                    )}
               </li>
             ))}
           </ul>

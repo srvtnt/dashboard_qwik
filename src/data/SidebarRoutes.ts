@@ -4,16 +4,37 @@ export const dataGeneralSidebar = [
   {
     icon: LuPanelBottom,
     label: "Dashboard",
-    href: "/",
+    options: false,
+    href: "",
+    optionsList: [{
+      label: "",
+      link: ""
+    }]
   },
   {
     icon: LuBuilding2,
-    label: "Companies",
-    href: "/",
+    label: "Inventario",
+    options: true,
+    href: "",
+    optionsList: [
+      {
+        label: "Lista Productos",
+        link: "/inventario/lista"
+      },
+      {
+        label: "Detalles Productos",
+        link: "/inventario/producto/detalles"
+      },
+    ]
   },
   {
     icon: LuCalendar,
     label: "Calendar",
-    href: "/",
+    options: false,
+    href: "",
+    optionsList: [{
+      label: "",
+      link: ""
+    }]
   },
 ];
