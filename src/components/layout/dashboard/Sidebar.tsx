@@ -13,7 +13,7 @@ export default component$(() => {
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
-        class="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
       >
         <span class="sr-only">Open sidebar</span>
         <svg
@@ -36,32 +36,34 @@ export default component$(() => {
         class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full transition-transform sm:translate-x-0"
         aria-label="Sidenav"
       >
-        <div class="h-full overflow-y-auto border-r border-gray-200 bg-white px-3 py-5 dark:border-gray-700 dark:bg-gray-800">
-          <LogoCustom
-            title="Caprebicentenario"
-            isClickable={true}
-            classCustom="mb-5 flex items-center ps-2.5 "
-            srcImg="https://flowbite.com/docs/images/logo.svg"
-          />
+        <div class="h-full overflow-y-auto border-r border-gray-200 bg-white  dark:border-gray-700 dark:bg-gray-800">
+          <div class="flex w-64 items-center border-b py-4 dark:border-gray-700">
+            <LogoCustom
+              title="Caprebicentenario"
+              isClickable={true}
+              classCustom="flex items-center px-3"
+              srcImg="https://flowbite.com/docs/images/logo.svg"
+            />
+          </div>
 
-          <ul class="space-y-2">
+          <ul class="space-y-2  px-3 pt-4">
             {dataGeneralSidebar.map((item) => (
               <li key={item.label}>
-                   {item.options ? (
-                      <SidebarItemList
-                        key={item.label}
-                        label={item.label} 
-                        icon={<item.icon />} 
-                        options={item.optionsList}
-                      />
-                    ) : (
-                      <SidebarItem
-                        key={item.label}
-                        icon={<item.icon />}
-                        label={item.label}
-                        href={item.href}
-                      />
-                    )}
+                {item.options ? (
+                  <SidebarItemList
+                    key={item.label}
+                    label={item.label}
+                    icon={<item.icon />}
+                    options={item.optionsList}
+                  />
+                ) : (
+                  <SidebarItem
+                    key={item.label}
+                    icon={<item.icon />}
+                    label={item.label}
+                    href={item.href}
+                  />
+                )}
               </li>
             ))}
           </ul>

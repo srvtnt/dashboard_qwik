@@ -1,12 +1,21 @@
 import { component$, JSX } from "@builder.io/qwik";
 
 interface CustomProps {
-  color: string;
-  size: number;
   icon: JSX.Element;
+  size?: number;
+  customCLass?: string; // Permite pasar clases adicionales
 }
 
 export const CustomIcon = component$((props: CustomProps) => {
-  const { color, size, icon } = props;
-  return <div style={{ color: `${color}`, fontSize: `${size}px` }}>{icon}</div>;
+  const { icon, size = 24, customCLass = "" } = props;
+  return (
+    <div
+      class={`flex items-center ${customCLass}`}
+      style={{
+        fontSize: `${size}px`,
+      }}
+    >
+      {icon}
+    </div>
+  );
 });

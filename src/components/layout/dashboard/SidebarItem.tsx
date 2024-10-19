@@ -14,12 +14,10 @@ export const SidebarItem = component$((props: SidebarItemProps) => {
   return (
     <Link
       href={href}
-      class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+      class="group flex w-full items-center rounded-lg p-2 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
     >
-      <CustomIcon color="black" size={20} icon={icon} />
+      <CustomIcon customCLass="dark:text-white" size={20} icon={icon} />
       <span class="ml-3">{label}</span>
     </Link>
-
-    
   );
 });

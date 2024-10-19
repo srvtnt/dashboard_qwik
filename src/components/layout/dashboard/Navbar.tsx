@@ -7,7 +7,7 @@ import { ThemeDarkBottom } from "~/components/ui/ThemeDarkBottom";
 
 export default component$(() => {
   return (
-    <nav class="border-b border-gray-200 bg-white px-4 py-2.5 dark:bg-gray-800 lg:px-6">
+    <nav class="border-b border-gray-200 bg-white px-4 py-2.5 dark:border-gray-700 dark:bg-gray-800 lg:px-6">
       <div class="flex flex-wrap items-center justify-between">
         <div class="flex items-center justify-start">
           <button

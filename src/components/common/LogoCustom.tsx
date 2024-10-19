@@ -21,7 +21,7 @@ export const LogoCustom = component$(
 
     return (
       <div
-        class={`flex h-10 min-h-10 items-center px-6 lg:h-10 lg:min-h-10 ${
+        class={`flex  items-center ${
           isClickable ? "cursor-pointer" : ""
         } ${classCustom || ""}`} // Aplicamos clases personalizadas
         onClick$={handleClick} // Usa onClick$ para manejar eventos en Qwik
@@ -31,7 +31,7 @@ export const LogoCustom = component$(
           alt="logo"
           width={40}
           height={40}
-          class="me-3 h-6 sm:h-7"
+          class=" h-6 sm:h-7"
         />
         <h1 class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           {title}
