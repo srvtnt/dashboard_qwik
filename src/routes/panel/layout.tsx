@@ -4,15 +4,19 @@ import Sidebar from "~/components/layout/dashboard/Sidebar";
 
 export default component$(() => {
   return (
-    <div class="flex h-full w-full">
+    <div class="flex h-screen w-full">
+      {/* Sidebar */}
       <div class="hidden h-full w-64 xl:fixed xl:block">
         <Sidebar />
       </div>
-      <div class="w-full xl:ml-64">
+
+      {/* Main content */}
+      <div class="flex w-full flex-col xl:ml-64">
         <Navbar />
-        <div class="bg-gray-50 p-6 dark:bg-gray-900 ">
-          <h2>hola</h2>
-          <Slot />;
+
+        {/* Slot container */}
+        <div class="flex-grow bg-gray-50 p-6 dark:bg-gray-900">
+          <Slot />
         </div>
       </div>
     </div>
